@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="tests/phpunit/includes/shell/" tests="33" assertions="69" errors="0" failures="0" skipped="0" time="0.403546">
+    <testsuite name="CommandFactoryTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandFactoryTest.php" tests="3" assertions="7" errors="0" failures="0" skipped="0" time="0.057585">
+      <testcase name="testCreate" class="CommandFactoryTest" classname="CommandFactoryTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandFactoryTest.php" line="19" assertions="5" time="0.041866"/>
+      <testcase name="testFirejailCreate" class="CommandFactoryTest" classname="CommandFactoryTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandFactoryTest.php" line="45" assertions="1" time="0.014450"/>
+      <testcase name="testValidCovers" class="CommandFactoryTest" classname="CommandFactoryTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandFactoryTest.php" line="34" assertions="1" time="0.001269"/>
+    </testsuite>
+    <testsuite name="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" tests="12" assertions="36" errors="0" failures="0" skipped="0" time="0.333974">
+      <testsuite name="CommandTest::testExecute" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.031944">
+        <testcase name="testExecute with data set &quot;success status&quot;" class="CommandTest" classname="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" line="23" assertions="2" time="0.012832"/>
+        <testcase name="testExecute with data set &quot;failure status&quot;" class="CommandTest" classname="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" line="23" assertions="2" time="0.010287"/>
+        <testcase name="testExecute with data set &quot;output&quot;" class="CommandTest" classname="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" line="23" assertions="2" time="0.008825"/>
+      </testsuite>
+      <testcase name="testEnvironment" class="CommandTest" classname="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" line="43" assertions="1" time="0.048019"/>
+      <testcase name="testStdout" class="CommandTest" classname="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" line="54" assertions="2" time="0.015631"/>
+      <testcase name="testStdoutRedirection" class="CommandTest" classname="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" line="67" assertions="2" time="0.014373"/>
+      <testcase name="testOutput" class="CommandTest" classname="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" line="81" assertions="7" time="0.038507"/>
+      <testcase name="testNullsAreSkipped" class="CommandTest" classname="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" line="114" assertions="1" time="0.000196"/>
+      <testcase name="testT69870" class="CommandTest" classname="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" line="121" assertions="10" time="0.123582"/>
+      <testcase name="testLogStderr" class="CommandTest" classname="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" line="137" assertions="3" time="0.022605"/>
+      <testcase name="testInput" class="CommandTest" classname="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" line="158" assertions="3" time="0.038575"/>
+      <testcase name="testValidCovers" class="CommandTest" classname="CommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php" line="34" assertions="1" time="0.000542"/>
+    </testsuite>
+    <testsuite name="FirejailCommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/FirejailCommandTest.php" tests="7" assertions="7" errors="0" failures="0" skipped="0" time="0.001060">
+      <testsuite name="FirejailCommandTest::testBuildFinalCommand" tests="6" assertions="6" errors="0" failures="0" skipped="0" time="0.000887">
+        <testcase name="testBuildFinalCommand with data set #0" class="FirejailCommandTest" classname="FirejailCommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/FirejailCommandTest.php" line="75" assertions="1" time="0.000180"/>
+        <testcase name="testBuildFinalCommand with data set #1" class="FirejailCommandTest" classname="FirejailCommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/FirejailCommandTest.php" line="75" assertions="1" time="0.000198"/>
+        <testcase name="testBuildFinalCommand with data set #2" class="FirejailCommandTest" classname="FirejailCommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/FirejailCommandTest.php" line="75" assertions="1" time="0.000117"/>
+        <testcase name="testBuildFinalCommand with data set #3" class="FirejailCommandTest" classname="FirejailCommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/FirejailCommandTest.php" line="75" assertions="1" time="0.000103"/>
+        <testcase name="testBuildFinalCommand with data set #4" class="FirejailCommandTest" classname="FirejailCommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/FirejailCommandTest.php" line="75" assertions="1" time="0.000106"/>
+        <testcase name="testBuildFinalCommand with data set #5" class="FirejailCommandTest" classname="FirejailCommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/FirejailCommandTest.php" line="75" assertions="1" time="0.000183"/>
+      </testsuite>
+      <testcase name="testValidCovers" class="FirejailCommandTest" classname="FirejailCommandTest" file="/srv/devmw/w/tests/phpunit/includes/shell/FirejailCommandTest.php" line="34" assertions="1" time="0.000174"/>
+    </testsuite>
+    <testsuite name="ShellTest" file="/srv/devmw/w/tests/phpunit/includes/shell/ShellTest.php" tests="11" assertions="19" errors="0" failures="0" skipped="0" time="0.010927">
+      <testcase name="testIsDisabled" class="ShellTest" classname="ShellTest" file="/srv/devmw/w/tests/phpunit/includes/shell/ShellTest.php" line="15" assertions="1" time="0.004580"/>
+      <testsuite name="ShellTest::testEscape" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.001345">
+        <testcase name="testEscape with data set &quot;simple&quot;" class="ShellTest" classname="ShellTest" file="/srv/devmw/w/tests/phpunit/includes/shell/ShellTest.php" line="22" assertions="1" time="0.000363"/>
+        <testcase name="testEscape with data set &quot;with args&quot;" class="ShellTest" classname="ShellTest" file="/srv/devmw/w/tests/phpunit/includes/shell/ShellTest.php" line="22" assertions="1" time="0.000397"/>
+        <testcase name="testEscape with data set &quot;array&quot;" class="ShellTest" classname="ShellTest" file="/srv/devmw/w/tests/phpunit/includes/shell/ShellTest.php" line="22" assertions="1" time="0.000286"/>
+        <testcase name="testEscape with data set &quot;skip nulls&quot;" class="ShellTest" classname="ShellTest" file="/srv/devmw/w/tests/phpunit/includes/shell/ShellTest.php" line="22" assertions="1" time="0.000299"/>
+      </testsuite>
+      <testsuite name="ShellTest::testMakeScriptCommand" tests="4" assertions="12" errors="0" failures="0" skipped="0" time="0.002107">
+        <testcase name="testMakeScriptCommand with data set #0" class="ShellTest" classname="ShellTest" file="/srv/devmw/w/tests/phpunit/includes/shell/ShellTest.php" line="48" assertions="3" time="0.000640"/>
+        <testcase name="testMakeScriptCommand with data set #1" class="ShellTest" classname="ShellTest" file="/srv/devmw/w/tests/phpunit/includes/shell/ShellTest.php" line="48" assertions="3" time="0.000555"/>
+        <testcase name="testMakeScriptCommand with data set #2" class="ShellTest" classname="ShellTest" file="/srv/devmw/w/tests/phpunit/includes/shell/ShellTest.php" line="48" assertions="3" time="0.000448"/>
+        <testcase name="testMakeScriptCommand with data set #3" class="ShellTest" classname="ShellTest" file="/srv/devmw/w/tests/phpunit/includes/shell/ShellTest.php" line="48" assertions="3" time="0.000464"/>
+      </testsuite>
+      <testcase name="testMediaWikiTestCaseParentSetupCalled" class="ShellTest" classname="ShellTest" file="/srv/devmw/w/tests/phpunit/includes/shell/ShellTest.php" line="631" assertions="1" time="0.002325"/>
+      <testcase name="testValidCovers" class="ShellTest" classname="ShellTest" file="/srv/devmw/w/tests/phpunit/includes/shell/ShellTest.php" line="34" assertions="1" time="0.000570"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

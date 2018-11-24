@@ -1,0 +1,22 @@
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="/vendor/phpunit/phpunit/phpunit.xsd"
+        colors="true">
+    <testsuites>
+        <testsuite name="Parser">
+            <file>src/ParserTest.php</file>
+        </testsuite>
+        <testsuite name="Builder">
+            <file>src/TestCaseBuilderTest.php</file>
+            <file>src/TestSuiteBuilderTest.php</file>
+        </testsuite>
+        <testsuite name="Searcher">
+            <file>src/NameSearcherTest.php</file>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory>../src/</directory>
+        </whitelist>
+    </filter>
+</phpunit>
