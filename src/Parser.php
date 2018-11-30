@@ -32,7 +32,7 @@ class Parser implements IParser
     private $doc;
 
     /**
-     * @var IComponent[]
+     * @var ITestSuite[]
      */
     private $result = [];
 
@@ -106,5 +106,25 @@ class Parser implements IParser
             'errors' => $result->getErrorsCount(),
             'failures' => $result->getFailuresCount(),
         ];
+    }
+
+    public function getTestResult() : TestResult
+    {
+        $tests = 0;
+        $time = 0;
+        $skipped = 0;
+        $assertions = 0;
+        $errors = 0;
+        $failures = 0;
+        foreach ($this->result as $item) {
+            $tests += $item->getTestsCount();
+            $assertions += $item->getAssertionsCount();
+            $skipped += $item->getSkippedCount();
+            $errors += $item->getErrorsCount();
+            $failures += $item->getFailuresCount();
+            $time += $item->getTime();
+        }
+        $result = new TestResult(compact('tests', 'assertions', 'skipped', 'errors', 'failures', 'time'));
+        return $result;
     }
 }

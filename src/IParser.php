@@ -60,4 +60,10 @@ interface IParser
      *  - failures
      */
     public function getTestSuiteInfo(string $testSuiteName) : array;
+
+    /**
+     * Get the test result from given log
+     * @return TestResult
+     */
+    public function getTestResult() : TestResult;
 }

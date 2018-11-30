@@ -71,4 +71,26 @@ class ParserTest extends TestCase
         ];
         $this->assertSame($expected, $result);
     }
+
+    public function testGetTestResult()
+    {
+        $parser = Parser::loadFile(self::ASSETS[1]);
+        $result = $parser->getTestResult();
+        $expected = [
+            'tests' => 33,
+            'time' => 0.403546,
+            'assertions' => 69,
+            'errors' => 0,
+            'failures' => 0,
+            'skipped' => 0
+        ];
+        $this->assertSame($expected, [
+            'tests' => $result->getTests(),
+            'time' => $result->getTime(),
+            'assertions' => $result->getAssertions(),
+            'errors' => $result->getErrors(),
+            'failures' => $result->getFailures(),
+            'skipped' => $result->getSkipped()
+        ]);
+    }
 }
