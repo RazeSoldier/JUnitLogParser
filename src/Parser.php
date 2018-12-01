@@ -20,8 +20,6 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
-require_once dirname(__DIR__) . '/vendor/autoload.php';
-
 use DiDom\Document;
 
 class Parser implements IParser
