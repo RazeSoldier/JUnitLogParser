@@ -20,7 +20,7 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
-abstract class AbstractFaultComponent implements IFalutComponent
+abstract class AbstractFaultComponent implements IFaultComponent
 {
     /**
      * @var string
