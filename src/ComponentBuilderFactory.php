@@ -32,9 +32,9 @@ class ComponentBuilderFactory
             case 'testcase':
                 return new TestCaseBuilder($element);
             case 'failure':
-                return new TestFailure($element);
+                return new TestFailureBuilder($element);
             case 'error':
-                return new TestError($element);
+                return new TestErrorBuilder($element);
             default:
                 throw new \LogicException("Failed to parse '{$element->tag}'");
         }
