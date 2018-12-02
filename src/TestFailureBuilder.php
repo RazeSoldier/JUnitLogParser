@@ -20,7 +20,7 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
-class TestFailureBuilder extends AbstractComponentBuilder
+class TestFailureBuilder extends AbstractFaultComponentBuilder
 {
     public function __construct(Element $element)
     {
