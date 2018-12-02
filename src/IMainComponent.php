@@ -27,7 +27,7 @@ interface IMainComponent extends IComponent
      */
     public function getParent();
 
-    public function addChildren(IMainComponent $component);
+    public function addChildren(IComponent $component);
 
     /**
      * @return bool
