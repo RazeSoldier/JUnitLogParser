@@ -24,7 +24,7 @@ use DiDom\Element;
 
 class ComponentBuilderFactory
 {
-    public static function make(Element $element) : AbstractComponentBuilder
+    public static function make(Element $element) : IBuilder
     {
         if ($element->tag === 'testsuite') {
             return new TestSuiteBuilder($element);
