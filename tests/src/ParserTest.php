@@ -26,7 +26,8 @@ use PHPUnit\Framework\TestCase;
 class ParserTest extends TestCase
 {
     const ASSETS = [
-        1 => ASSETS_DIR . '/1.xml'
+        1 => ASSETS_DIR . '/1.xml',
+        2 => ASSETS_DIR . '/2.xml'
     ];
 
     /**
@@ -74,14 +75,14 @@ class ParserTest extends TestCase
 
     public function testGetTestResult()
     {
-        $parser = Parser::loadFile(self::ASSETS[1]);
+        $parser = Parser::loadFile(self::ASSETS[2]);
         $result = $parser->getTestResult();
         $expected = [
-            'tests' => 33,
-            'time' => 0.403546,
-            'assertions' => 69,
-            'errors' => 0,
-            'failures' => 0,
+            'tests' => 10,
+            'time' => 0.001265,
+            'assertions' => 2,
+            'errors' => 8,
+            'failures' => 2,
             'skipped' => 0
         ];
         $this->assertSame($expected, [
@@ -91,6 +92,17 @@ class ParserTest extends TestCase
             'errors' => $result->getErrors(),
             'failures' => $result->getFailures(),
             'skipped' => $result->getSkipped()
+        ]);
+
+       $expexted = [
+            'PHPUnit\Framework\ExpectationFailedException',
+            "Wikimedia\IPSet\Test\IPSetTest::testMatchFailure with data set \"inet fail\" "
+                . "('0af.0af', false)\nError: Class 'Wikimedia\IPSet' "
+                . "not found\n\n/home/razesoldier/workspace/IPSet/tests/IPSetTest.php:352\n"
+        ];
+        $this->assertSame($expexted, [
+            $result->getFaults()[6]['type'],
+            $result->getFaults()[9]['text']
         ]);
     }
 }

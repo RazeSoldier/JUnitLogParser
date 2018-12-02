@@ -28,6 +28,7 @@ class TestResult
     private $skipped;
     private $errors;
     private $failures;
+    private $faults;
 
     public function __construct(array $data)
     {
@@ -37,6 +38,7 @@ class TestResult
         $this->skipped = $data['skipped'];
         $this->errors = $data['errors'];
         $this->failures = $data['failures'];
+        $this->faults = $data['faults'];
     }
 
     /**
@@ -87,4 +89,11 @@ class TestResult
         return $this->failures;
     }
 
+    /**
+     * @return array[]
+     */
+    public function getFaults() : array
+    {
+        return $this->faults;
+    }
 }
