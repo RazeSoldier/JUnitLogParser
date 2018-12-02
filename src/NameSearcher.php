@@ -43,7 +43,7 @@ class NameSearcher
 
     /**
      * NameSearcher constructor.
-     * @param IComponent $component
+     * @param IMainComponent $component
      * @param string $needle
      * @param callable|null $hook
      */

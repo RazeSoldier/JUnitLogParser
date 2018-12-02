@@ -48,7 +48,7 @@ abstract class AbstractMainComponent implements IMainComponent
     protected $parent;
 
     /**
-     * @var IComponent[]|null
+     * @var IComponent[]
      */
     protected $children = [];
 
@@ -109,9 +109,9 @@ abstract class AbstractMainComponent implements IMainComponent
         $this->file = $file;
     }
 
-    public function addChildren(IMainComponent $testSuite)
+    public function addChildren(IComponent $component)
     {
-        $this->children[] = $testSuite;
+        $this->children[] = $component;
     }
 
     public function hasChildren() : bool

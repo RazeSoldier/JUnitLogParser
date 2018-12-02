@@ -17,43 +17,19 @@
  *
  * @copyright
  */
-
 namespace RazeSoldier\JUnitLogParser;
 
-interface IMainComponent extends IComponent
+interface IFaultComponent extends IComponent
 {
-    /**
-     * @var IComponent|null Get the parent under the current component
-     */
-    public function getParent();
+    public function setType(string $type);
 
-    public function addChildren(IComponent $component);
-
-    /**
-     * @return bool
-     */
-    public function hasChildren() : bool;
-
-    /**
-     * @return IComponent[]
-     */
-    public function getChildren() : array;
-
-    public function setName(string $name);
-
-    public function setAssertionsCount(int $count);
-
-    public function setTime(float $time);
+    public function setText(string $text);
 
     public function setParent(IMainComponent $component);
 
-    public function setFile($file);
+    public function getType() : string;
 
-    public function getName() : string;
+    public function getText() : string;
 
-    public function getAssertionsCount() : int;
-
-    public function getTime() : float;
-
-    public function getFile();
+    public function getParent() : IMainComponent;
 }

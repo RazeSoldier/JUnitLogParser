@@ -22,7 +22,7 @@ namespace RazeSoldier\JUnitLogParser;
 
 use DiDom\Element;
 
-abstract class AbstractMainComponentBuilder implements IBuilder
+abstract class AbstractFaultComponentBuilder implements IBuilder
 {
     /**
      * @var Element
@@ -30,53 +30,29 @@ abstract class AbstractMainComponentBuilder implements IBuilder
     protected $element;
 
     /**
-     * @var IMainComponent
+     * @var IFaultComponent
      */
     protected $product;
-
-    /**
-     * @var bool
-     */
-    protected $hasChildren;
 
     public function __construct(Element $element)
     {
         $this->element = $element;
-        $this->hasChildren = $this->element->hasChildren();
     }
 
     public function build()
     {
-        $this->buildName();
-        $this->buildAssertionsCount();
-        $this->buildTime();
-        $this->buildFile();
-        if ($this->hasChildren) {
-            foreach ($this->element->children() as $child) {
-                $builder = ComponentBuilderFactory::make($child);
-                $this->product->addChildren($builder->build());
-            }
-        }
+        $this->buildType();
+        $this->buildText();
         return $this->product;
     }
 
-    protected function buildName()
+    protected function buildType()
     {
-        $this->product->setName($this->element->name);
+        $this->product->setType($this->element->type);
     }
 
-    protected function buildAssertionsCount()
+    protected function buildText()
     {
-        $this->product->setAssertionsCount($this->element->assertions);
-    }
-
-    protected function buildTime()
-    {
-        $this->product->setTime($this->element->time);
-    }
-
-    protected function buildFile()
-    {
-        $this->product->setFile($this->element->file);
+        $this->product->setText($this->element->text());
     }
 }

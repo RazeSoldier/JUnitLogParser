@@ -20,40 +20,50 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
-interface IMainComponent extends IComponent
+abstract class AbstractFaultComponent implements IFaultComponent
 {
     /**
-     * @var IComponent|null Get the parent under the current component
+     * @var string
      */
-    public function getParent();
-
-    public function addChildren(IComponent $component);
+    protected $type;
 
     /**
-     * @return bool
+     * @var string
      */
-    public function hasChildren() : bool;
+    protected $text;
 
     /**
-     * @return IComponent[]
+     * IMainComponent The parent for this component
      */
-    public function getChildren() : array;
+    protected $parent;
 
-    public function setName(string $name);
+    public function setType(string $type)
+    {
+        $this->type = $type;
+    }
 
-    public function setAssertionsCount(int $count);
+    public function setText(string $text)
+    {
+        $this->text = $text;
+    }
 
-    public function setTime(float $time);
+    public function setParent(IMainComponent $component)
+    {
+        $this->parent = $component;
+    }
 
-    public function setParent(IMainComponent $component);
+    public function getType() : string
+    {
+        return $this->type;
+    }
 
-    public function setFile($file);
+    public function getText() : string
+    {
+        return $this->text;
+    }
 
-    public function getName() : string;
-
-    public function getAssertionsCount() : int;
-
-    public function getTime() : float;
-
-    public function getFile();
+    public function getParent() : IMainComponent
+    {
+        return $this->parent;
+    }
 }

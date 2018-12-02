@@ -114,6 +114,7 @@ class Parser implements IParser
         $assertions = 0;
         $errors = 0;
         $failures = 0;
+        $faults = [];
         foreach ($this->result as $item) {
             $tests += $item->getTestsCount();
             $assertions += $item->getAssertionsCount();
@@ -121,8 +122,12 @@ class Parser implements IParser
             $errors += $item->getErrorsCount();
             $failures += $item->getFailuresCount();
             $time += $item->getTime();
+            if ($item->getErrorsCount() || $item->getFailuresCount()) {
+                $fault = (new FaultSearcher($item))->search();
+                $faults = array_merge($faults, $fault);
+            }
         }
-        $result = new TestResult(compact('tests', 'assertions', 'skipped', 'errors', 'failures', 'time'));
+        $result = new TestResult(compact('tests', 'assertions', 'skipped', 'errors', 'failures', 'time', 'faults'));
         return $result;
     }
 }
