@@ -20,6 +20,8 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
+use DiDom\Element;
+
 class TestErrorBuilder extends AbstractFaultComponentBuilder
 {
     public function __construct(Element $element)
