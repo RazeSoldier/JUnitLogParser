@@ -22,7 +22,7 @@ namespace RazeSoldier\JUnitLogParser;
 
 use DiDom\Element;
 
-class TestCaseBuilder extends MainComponentBuilder
+class TestCaseBuilder extends AbstractMainComponentBuilder
 {
     public function __construct(Element $element)
     {

@@ -20,7 +20,7 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
-class TestCase extends MainComponent implements ITestCase
+class TestCase extends AbstractMainComponent implements ITestCase
 {
     /**
      * @var string

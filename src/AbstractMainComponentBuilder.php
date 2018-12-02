@@ -22,7 +22,7 @@ namespace RazeSoldier\JUnitLogParser;
 
 use DiDom\Element;
 
-abstract class MainComponentBuilder implements IBuilder
+abstract class AbstractMainComponentBuilder implements IBuilder
 {
     /**
      * @var Element

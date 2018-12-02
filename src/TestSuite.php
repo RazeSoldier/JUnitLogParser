@@ -20,7 +20,7 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
-class TestSuite extends MainComponent implements ITestSuite
+class TestSuite extends AbstractMainComponent implements ITestSuite
 {
     /**
      * @var int The count of tests for this suite

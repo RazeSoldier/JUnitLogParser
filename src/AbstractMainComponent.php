@@ -20,7 +20,7 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
-abstract class MainComponent implements IComponent
+abstract class AbstractMainComponent implements IComponent
 {
     /**
      * @var string Suite name
