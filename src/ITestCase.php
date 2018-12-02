@@ -20,7 +20,7 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
-interface ITestCase extends IComponent
+interface ITestCase extends IMainComponent
 {
     public function getClass() : string;
 

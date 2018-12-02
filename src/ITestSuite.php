@@ -20,7 +20,7 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
-interface ITestSuite extends IComponent
+interface ITestSuite extends IMainComponent
 {
     public function setTestsCount(int $count);
 

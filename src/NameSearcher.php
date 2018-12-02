@@ -27,7 +27,7 @@ namespace RazeSoldier\JUnitLogParser;
 class NameSearcher
 {
     /**
-     * @var IComponent
+     * @var IMainComponent
      */
     private $component;
 
@@ -47,7 +47,7 @@ class NameSearcher
      * @param string $needle
      * @param callable|null $hook
      */
-    public function __construct(IComponent $component, string $needle, callable $hook = null)
+    public function __construct(IMainComponent $component, string $needle, callable $hook = null)
     {
         $this->component = $component;
         $this->needle = $needle;
@@ -87,7 +87,7 @@ class NameSearcher
         return false;
     }
 
-    private function hook(IComponent $result) : bool
+    private function hook(IMainComponent $result) : bool
     {
         if ($this->hook === null) {
             return true;

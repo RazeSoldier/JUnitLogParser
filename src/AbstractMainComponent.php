@@ -20,7 +20,7 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
-abstract class AbstractMainComponent implements IComponent
+abstract class AbstractMainComponent implements IMainComponent
 {
     /**
      * @var string Suite name
@@ -99,7 +99,7 @@ abstract class AbstractMainComponent implements IComponent
         $this->time = $time;
     }
 
-    public function setParent(IComponent $component)
+    public function setParent(IMainComponent $component)
     {
         $this->parent = $component;
     }
@@ -109,7 +109,7 @@ abstract class AbstractMainComponent implements IComponent
         $this->file = $file;
     }
 
-    public function addChildren(IComponent $testSuite)
+    public function addChildren(IMainComponent $testSuite)
     {
         $this->children[] = $testSuite;
     }
