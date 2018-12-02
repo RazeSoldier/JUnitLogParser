@@ -36,4 +36,34 @@ abstract class AbstractFaultComponent implements IFalutComponent
      * IMainComponent The parent for this component
      */
     protected $parent;
+
+    public function setType(string $type)
+    {
+        $this->type = $type;
+    }
+
+    public function setText(string $text)
+    {
+        $this->text = $text;
+    }
+
+    public function setParent(IMainComponent $component)
+    {
+        $this->parent = $component;
+    }
+
+    public function getType() : string
+    {
+        return $this->type;
+    }
+
+    public function getText() : string
+    {
+        return $this->text;
+    }
+
+    public function getParent() : IMainComponent
+    {
+        return $this->parent;
+    }
 }

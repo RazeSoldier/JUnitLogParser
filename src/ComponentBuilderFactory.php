@@ -26,12 +26,17 @@ class ComponentBuilderFactory
 {
     public static function make(Element $element) : IBuilder
     {
-        if ($element->tag === 'testsuite') {
-            return new TestSuiteBuilder($element);
-        } elseif ($element->tag === 'testcase') {
-            return new TestCaseBuilder($element);
-        } else {
-            throw new \LogicException("Failed to parse '{$element->tag}'");
+        switch ($element->tag) {
+            case 'testsuite':
+                return new TestSuiteBuilder($element);
+            case 'testcase':
+                return new TestCaseBuilder($element);
+            case 'failure':
+                return new TestFailure($element);
+            case 'error':
+                return new TestError($element);
+            default:
+                throw new \LogicException("Failed to parse '{$element->tag}'");
         }
     }
 }

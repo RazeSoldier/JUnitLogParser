@@ -20,7 +20,7 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
-interface TestFailure implements ITestFailure
+class TestFailure extends AbstractFaultComponent implements ITestFailure
 {
 
 }

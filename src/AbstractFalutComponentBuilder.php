@@ -37,5 +37,22 @@ abstract class AbstractFaultComponentBuilder implements IBuilder
     public function __construct(Element $element)
     {
         $this->element = $element;
-    } 
+    }
+
+    public function build()
+    {
+        $this->buildType();
+        $this->buildText();
+        return $this->product;
+    }
+
+    protected function buildType()
+    {
+        $this->product->setType($this->element->type);
+    }
+
+    protected function buildText()
+    {
+        $this->product->setText($this->element->text());
+    }
 }

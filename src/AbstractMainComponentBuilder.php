@@ -30,7 +30,7 @@ abstract class AbstractMainComponentBuilder implements IBuilder
     protected $element;
 
     /**
-     * @var IComponent
+     * @var IMainComponent
      */
     protected $product;
 

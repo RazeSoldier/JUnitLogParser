@@ -19,7 +19,7 @@
  */
 namespace RazeSoldier\JUnitLogParser;
 
-class TestError implements ITestError
+class TestError extends AbstractFaultComponent implements ITestError
 {
 
 }
