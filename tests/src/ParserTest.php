@@ -22,12 +22,14 @@ namespace RazeSoldier\JUnitLogParser\Test;
 
 use RazeSoldier\JUnitLogParser\Parser;
 use PHPUnit\Framework\TestCase;
+use Wikimedia\AtEase\AtEase;
 
 class ParserTest extends TestCase
 {
     const ASSETS = [
         1 => ASSETS_DIR . '/1.xml',
-        2 => ASSETS_DIR . '/2.xml'
+        2 => ASSETS_DIR . '/2.xml',
+        3 => ASSETS_DIR . '/3.xml',
     ];
 
     /**
@@ -104,5 +106,14 @@ class ParserTest extends TestCase
             $result->getFaults()[6]['type'],
             $result->getFaults()[9]['text']
         ]);
+    }
+
+    /**
+     * @expectedException \DOMException
+     * @expectedExceptionMessage Cannot parse non-JUnit log format XML
+     */
+    public function testCheckValid()
+    {
+        AtEase::quietCall([Parser::class, 'loadFile'], self::ASSETS[3]);
     }
 }

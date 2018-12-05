@@ -25,6 +25,8 @@ use RazeSoldier\JUnitLogParser\ComponentBuilder\ComponentBuilderFactory;
 
 class Parser implements IParser
 {
+    const XSD_PATH = __DIR__ . '/junit.xsd';
+
     /**
      * @var Document
      */
@@ -39,8 +41,16 @@ class Parser implements IParser
     {
         $doc = new Document();
         $doc->loadXML($str);
+        if (!$this->checkValid($doc->getDocument())) {
+            throw new \DOMException('Cannot parse non-JUnit log format XML');
+        }
         $this->doc = $doc;
         $this->parse();
+    }
+
+    private function checkValid(\DOMDocument $doc) : bool
+    {
+        return $doc->schemaValidate(self::XSD_PATH);
     }
 
     /**
