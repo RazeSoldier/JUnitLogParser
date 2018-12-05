@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Other" tests="10" assertions="2" errors="8" failures="2" skipped="0" time="0.001265">
+    <testsuite name="Wikimedia\IPSet\Test\IPSetTest" file="/home/razesoldier/workspace/IPSet/tests/IPSetTest.php" tests="10" assertions="2" errors="8" failures="2" skipped="0" time="0.001265">
+      <testsuite name="Wikimedia\IPSet\Test\IPSetTest::testIPSet" tests="6" assertions="0" errors="6" failures="0" skipped="0" time="0.000758">
+        <testcase ame="testIPSet with data set &quot;old_list_subset&quot;" class="Wikimedia\IPSet\Test\IPSetTest" classname="Wikimedia.IPSet.Test.IPSetTest" file="/home/razesoldier/workspace/IPSet/tests/IPSetTest.php" line="290" assertions="0" time="0.000313">
+          <error type="Error">Wikimedia\IPSet\Test\IPSetTest::testIPSet with data set "old_list_subset" ('old_list_subset', array('208.80.152.162', '10.64.0.123', '10.64.0.124', '10.64.0.125', '10.64.0.126', '10.64.0.127', '10.64.0.128', '10.64.0.129', '10.64.32.104', '10.64.32.105', '10.64.32.106', '10.64.32.107', '91.198.174.45', '91.198.174.46', '91.198.174.47', '91.198.174.57', '2620:0:862:1:A6BA:DBFF:FE30:CFB3', '91.198.174.58', '2620:0:862:1:A6BA:DBFF:FE38:FFDA', '208.80.152.16', '208.80.152.17', '208.80.152.18', '208.80.152.19', '91.198.174.102', '91.198.174.103', '91.198.174.104', '91.198.174.105', '91.198.174.106', '91.198.174.107', '91.198.174.81', '2620:0:862:1:26B6:FDFF:FEF5:B2D4', '91.198.174.82', '2620:0:862:1:26B6:FDFF:FEF5:ABB4', '10.20.0.113', '2620:0:862:102:26B6:FDFF:FEF5:AD9C', '10.20.0.114', '2620:0:862:102:26B6:FDFF:FEF5:7C38'), array(false, false, false, true, true, true, false, true, false, false, false, false, false, true, false))
+Error: Class 'Wikimedia\IPSet' not found
+
+/home/razesoldier/workspace/IPSet/tests/IPSetTest.php:291
+</error>
+        </testcase>
+        <testcase name="testIPSet with data set &quot;new_cidr_set&quot;" class="Wikimedia\IPSet\Test\IPSetTest" classname="Wikimedia.IPSet.Test.IPSetTest" file="/home/razesoldier/workspace/IPSet/tests/IPSetTest.php" line="290" assertions="0" time="0.000090">
+          <error type="Error">Wikimedia\IPSet\Test\IPSetTest::testIPSet with data set "new_cidr_set" ('new_cidr_set', array('208.80.154.0/26', '2620:0:861:1::/64', '208.80.154.128/26', '2620:0:861:2::/64', '208.80.154.64/26', '2620:0:861:3::/64', '208.80.155.96/27', '2620:0:861:4::/64', '10.64.0.0/22', '2620:0:861:101::/64', '10.64.16.0/22', '2620:0:861:102::/64', '10.64.32.0/22', '2620:0:861:103::/64', '10.64.48.0/22', '2620:0:861:107::/64', '91.198.174.0/25', '2620:0:862:1::/64', '10.20.0.0/24', '2620:0:862:102::/64', '10.128.0.0/24', '2620:0:863:101::/64', '10.2.4.26'), array(false, false, false, true, false, true, true, true, false, false, false, false, false, false, false, false, true))
+Error: Class 'Wikimedia\IPSet' not found
+
+/home/razesoldier/workspace/IPSet/tests/IPSetTest.php:291
+</error>
+        </testcase>
+        <testcase name="testIPSet with data set &quot;empty_set&quot;" class="Wikimedia\IPSet\Test\IPSetTest" classname="Wikimedia.IPSet.Test.IPSetTest" file="/home/razesoldier/workspace/IPSet/tests/IPSetTest.php" line="290" assertions="0" time="0.000081">
+          <error type="Error">Wikimedia\IPSet\Test\IPSetTest::testIPSet with data set "empty_set" ('empty_set', array(), array(false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false))
+Error: Class 'Wikimedia\IPSet' not found
+
+/home/razesoldier/workspace/IPSet/tests/IPSetTest.php:291
+</error>
+        </testcase>
+        <testcase name="testIPSet with data set &quot;edge_cases&quot;" class="Wikimedia\IPSet\Test\IPSetTest" classname="Wikimedia.IPSet.Test.IPSetTest" file="/home/razesoldier/workspace/IPSet/tests/IPSetTest.php" line="290" assertions="0" time="0.000089">
+          <error type="Error">Wikimedia\IPSet\Test\IPSetTest::testIPSet with data set "edge_cases" ('edge_cases', array('0.0.0.0', '255.255.255.255', '::', 'ffff:ffff:ffff:ffff:ffff:ffff...f:ffff', '10.10.10.10/25'), array(true, true, false, false, false, false, false, false, false, false, false, true, true, false, false, false, false, false, true, true, true, true, true, false, false, false, false))
+Error: Class 'Wikimedia\IPSet' not found
+
+/home/razesoldier/workspace/IPSet/tests/IPSetTest.php:291
+</error>
+        </testcase>
+        <testcase name="testIPSet with data set &quot;exercise_optimizer&quot;" class="Wikimedia\IPSet\Test\IPSetTest" classname="Wikimedia.IPSet.Test.IPSetTest" file="/home/razesoldier/workspace/IPSet/tests/IPSetTest.php" line="290" assertions="0" time="0.000094">
+          <error type="Error">Wikimedia\IPSet\Test\IPSetTest::testIPSet with data set "exercise_optimizer" ('exercise_optimizer', array('ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...00/113', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/113', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/111', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/110', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/107', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/107', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/112', 'ffff:ffff:ffff:ffff:ffff:ffff...:0/111'), array(false, false, false, false, true, true, true, true, true, true, true, true, false))
+Error: Class 'Wikimedia\IPSet' not found
+
+/home/razesoldier/workspace/IPSet/tests/IPSetTest.php:291
+</error>
+        </testcase>
+        <testcase name="testIPSet with data set &quot;overlap&quot;" class="Wikimedia\IPSet\Test\IPSetTest" classname="Wikimedia.IPSet.Test.IPSetTest" file="/home/razesoldier/workspace/IPSet/tests/IPSetTest.php" line="290" assertions="0" time="0.000091">
+          <error type="Error">Wikimedia\IPSet\Test\IPSetTest::testIPSet with data set "overlap" ('overlap', array('10.10.10.0/25', '10.10.10.0/26'), array(false, true, true, false))
+Error: Class 'Wikimedia\IPSet' not found
+
+/home/razesoldier/workspace/IPSet/tests/IPSetTest.php:291
+</error>
+        </testcase>
+      </testsuite>
+      <testsuite name="Wikimedia\IPSet\Test\IPSetTest::testAddCidrWarning" tests="2" assertions="2" errors="0" failures="2" skipped="0" time="0.000323">
+        <testcase name="testAddCidrWarning with data set &quot;bad mask ipv4&quot;" class="Wikimedia\IPSet\Test\IPSetTest" classname="Wikimedia.IPSet.Test.IPSetTest" file="/home/razesoldier/workspace/IPSet/tests/IPSetTest.php" line="308" assertions="1" time="0.000172">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Wikimedia\IPSet\Test\IPSetTest::testAddCidrWarning with data set "bad mask ipv4" ('0.0.0.0/33')
+Failed asserting that exception of type "Error" matches expected exception "PHPUnit\Framework\Error\Warning". Message was: "Class 'Wikimedia\IPSet' not found" at
+/home/razesoldier/workspace/IPSet/tests/IPSetTest.php:321
+.
+
+</failure>
+        </testcase>
+        <testcase name="testAddCidrWarning with data set &quot;bad mask ipv6&quot;" class="Wikimedia\IPSet\Test\IPSetTest" classname="Wikimedia.IPSet.Test.IPSetTest" file="/home/razesoldier/workspace/IPSet/tests/IPSetTest.php" line="308" assertions="1" time="0.000151">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Wikimedia\IPSet\Test\IPSetTest::testAddCidrWarning with data set "bad mask ipv6" ('2620:0:861:1::/129')
+Failed asserting that exception of type "Error" matches expected exception "PHPUnit\Framework\Error\Warning". Message was: "Class 'Wikimedia\IPSet' not found" at
+/home/razesoldier/workspace/IPSet/tests/IPSetTest.php:321
+.
+
+</failure>
+        </testcase>
+      </testsuite>
+      <testsuite name="Wikimedia\IPSet\Test\IPSetTest::testAddCidrFailure" tests="1" assertions="0" errors="1" failures="0" skipped="0" time="0.000095">
+        <testcase name="testAddCidrFailure with data set &quot;inet fail&quot;" class="Wikimedia\IPSet\Test\IPSetTest" classname="Wikimedia.IPSet.Test.IPSetTest" file="/home/razesoldier/workspace/IPSet/tests/IPSetTest.php" line="335" assertions="0" time="0.000095">
+          <error type="ReflectionException">Wikimedia\IPSet\Test\IPSetTest::testAddCidrFailure with data set "inet fail" ('0af.0af')
+ReflectionException: Class Wikimedia\IPSet does not exist
+
+/home/razesoldier/workspace/IPSet/tests/IPSetTest.php:336
+</error>
+        </testcase>
+      </testsuite>
+      <testsuite name="Wikimedia\IPSet\Test\IPSetTest::testMatchFailure" tests="1" assertions="0" errors="1" failures="0" skipped="0" time="0.000089">
+        <testcase name="testMatchFailure with data set &quot;inet fail&quot;" class="Wikimedia\IPSet\Test\IPSetTest" classname="Wikimedia.IPSet.Test.IPSetTest" file="/home/razesoldier/workspace/IPSet/tests/IPSetTest.php" line="351" assertions="0" time="0.000089">
+          <error type="Error">Wikimedia\IPSet\Test\IPSetTest::testMatchFailure with data set "inet fail" ('0af.0af', false)
+Error: Class 'Wikimedia\IPSet' not found
+
+/home/razesoldier/workspace/IPSet/tests/IPSetTest.php:352
+</error>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
