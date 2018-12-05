@@ -20,6 +20,11 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
+use RazeSoldier\JUnitLogParser\Component\{
+    IMainComponent,
+    IFaultComponent
+};
+
 /**
  * Used to find faults in a main component
  * @package RazeSoldier\JUnitLogParser

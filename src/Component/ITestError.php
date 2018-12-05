@@ -18,39 +18,9 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\Component;
 
-use DiDom\Element;
-
-class TestCaseBuilder extends AbstractMainComponentBuilder
+interface ITestError extends IFaultComponent
 {
-    public function __construct(Element $element)
-    {
-        parent::__construct($element);
-        $this->product = new TestCase();
-    }
 
-    public function build() : ITestCase
-    {
-        parent::build();
-        $this->buildClass();
-        $this->buildClassName();
-        $this->buildLine();
-        return $this->product;
-    }
-
-    private function buildClass()
-    {
-        $this->product->setClass($this->element->class);
-    }
-
-    private function buildClassName()
-    {
-        $this->product->setClassname($this->element->classname);
-    }
-
-    private function buildLine()
-    {
-        $this->product->setLine($this->element->line);
-    }
 }

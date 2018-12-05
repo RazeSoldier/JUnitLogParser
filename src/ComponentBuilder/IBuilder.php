@@ -17,9 +17,10 @@
  *
  * @copyright
  */
-namespace RazeSoldier\JUnitLogParser;
 
-class TestError extends AbstractFaultComponent implements ITestError
+namespace RazeSoldier\JUnitLogParser\ComponentBuilder;
+
+interface IBuilder
 {
-
+    public function build();
 }

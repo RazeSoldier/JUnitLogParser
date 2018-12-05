@@ -17,19 +17,26 @@
  *
  * @copyright
  */
-namespace RazeSoldier\JUnitLogParser;
 
-interface IFaultComponent extends IComponent
+namespace RazeSoldier\JUnitLogParser\ComponentBuilder;
+
+use DiDom\Element;
+
+class ComponentBuilderFactory
 {
-    public function setType(string $type);
-
-    public function setText(string $text);
-
-    public function setParent(IMainComponent $component);
-
-    public function getType() : string;
-
-    public function getText() : string;
-
-    public function getParent() : IMainComponent;
+    public static function make(Element $element) : IBuilder
+    {
+        switch ($element->tag) {
+            case 'testsuite':
+                return new TestSuiteBuilder($element);
+            case 'testcase':
+                return new TestCaseBuilder($element);
+            case 'failure':
+                return new TestFailureBuilder($element);
+            case 'error':
+                return new TestErrorBuilder($element);
+            default:
+                throw new \LogicException("Failed to parse '{$element->tag}'");
+        }
+    }
 }

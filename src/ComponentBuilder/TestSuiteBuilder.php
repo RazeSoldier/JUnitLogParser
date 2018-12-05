@@ -18,9 +18,13 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\ComponentBuilder;
 
 use DiDom\Element;
+use RazeSoldier\JUnitLogParser\Component\{
+    TestSuite,
+    ITestSuite
+};
 
 class TestSuiteBuilder extends AbstractMainComponentBuilder
 {

@@ -21,7 +21,7 @@
 namespace RazeSoldier\JUnitLogParser\Test;
 
 use DiDom\Element;
-use RazeSoldier\JUnitLogParser\TestSuiteBuilder;
+use RazeSoldier\JUnitLogParser\ComponentBuilder\TestSuiteBuilder;
 use PHPUnit\Framework\TestCase;
 
 class TestSuiteBuilderTest extends TestCase
@@ -43,7 +43,7 @@ class TestSuiteBuilderTest extends TestCase
     }
 
     /**
-     * @covers \RazeSoldier\JUnitLogParser\TestSuiteBuilder
+     * @covers \RazeSoldier\JUnitLogParser\ComponentBuilder\TestSuiteBuilder
      */
     public function testBuild()
     {

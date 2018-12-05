@@ -20,6 +20,8 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
+use RazeSoldier\JUnitLogParser\Component\IMainComponent;
+
 /**
  * Used to search a collection via name
  * @package RazeSoldier\JUnitLogParser

@@ -21,7 +21,7 @@
 namespace RazeSoldier\JUnitLogParser\Test;
 
 use DiDom\Element;
-use RazeSoldier\JUnitLogParser\TestCaseBuilder;
+use RazeSoldier\JUnitLogParser\ComponentBuilder\TestCaseBuilder;
 use PHPUnit\Framework\TestCase;
 
 class TestCaseBuilderTest extends TestCase

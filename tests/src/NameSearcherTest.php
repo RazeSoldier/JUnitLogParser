@@ -21,11 +21,13 @@
 namespace RazeSoldier\JUnitLogParser\Test;
 
 use RazeSoldier\JUnitLogParser\{
+    Parser,
+    NameSearcher
+};
+use RazeSoldier\JUnitLogParser\Component\{
     IComponent,
     ITestCase,
-    ITestSuite,
-    NameSearcher,
-    Parser
+    ITestSuite
 };
 use PHPUnit\Framework\TestCase;
 

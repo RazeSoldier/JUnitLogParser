@@ -21,6 +21,7 @@
 namespace RazeSoldier\JUnitLogParser;
 
 use DiDom\Document;
+use RazeSoldier\JUnitLogParser\ComponentBuilder\ComponentBuilderFactory;
 
 class Parser implements IParser
 {
