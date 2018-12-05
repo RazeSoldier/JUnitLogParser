@@ -18,9 +18,9 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\Component;
 
-interface ITestError extends IFaultComponent
+class TestFailure extends AbstractFaultComponent implements ITestFailure
 {
 
 }

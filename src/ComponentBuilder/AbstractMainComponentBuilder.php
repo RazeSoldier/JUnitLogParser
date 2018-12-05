@@ -18,7 +18,7 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\ComponentBuilder;
 
 use DiDom\Element;
 
@@ -30,7 +30,7 @@ abstract class AbstractMainComponentBuilder implements IBuilder
     protected $element;
 
     /**
-     * @var IMainComponent
+     * @var RazeSoldier\JUnitLogParser\Component\IMainComponent
      */
     protected $product;
 

@@ -18,9 +18,16 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\ComponentBuilder;
 
-interface IBuilder
+use DiDom\Element;
+use RazeSoldier\JUnitLogParser\Component\TestFailure;
+
+class TestFailureBuilder extends AbstractFaultComponentBuilder
 {
-    public function build();
+    public function __construct(Element $element)
+    {
+        parent::__construct($element);
+        $this->product = new TestFailure();
+    }
 }

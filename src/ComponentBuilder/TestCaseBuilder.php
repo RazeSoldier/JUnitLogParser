@@ -18,15 +18,43 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\ComponentBuilder;
 
 use DiDom\Element;
+use RazeSoldier\JUnitLogParser\Component\{
+    TestCase,
+    ITestCase
+};
 
-class TestFailureBuilder extends AbstractFaultComponentBuilder
+class TestCaseBuilder extends AbstractMainComponentBuilder
 {
     public function __construct(Element $element)
     {
         parent::__construct($element);
-        $this->product = new TestFailure();
+        $this->product = new TestCase();
+    }
+
+    public function build() : ITestCase
+    {
+        parent::build();
+        $this->buildClass();
+        $this->buildClassName();
+        $this->buildLine();
+        return $this->product;
+    }
+
+    private function buildClass()
+    {
+        $this->product->setClass($this->element->class);
+    }
+
+    private function buildClassName()
+    {
+        $this->product->setClassname($this->element->classname);
+    }
+
+    private function buildLine()
+    {
+        $this->product->setLine($this->element->line);
     }
 }

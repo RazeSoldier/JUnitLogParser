@@ -18,7 +18,7 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\Component;
 
 class TestSuite extends AbstractMainComponent implements ITestSuite
 {

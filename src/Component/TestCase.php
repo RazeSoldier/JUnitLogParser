@@ -18,52 +18,70 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\Component;
 
-abstract class AbstractFaultComponent implements IFaultComponent
+class TestCase extends AbstractMainComponent implements ITestCase
 {
     /**
      * @var string
      */
-    protected $type;
+    private $class;
 
     /**
      * @var string
      */
-    protected $text;
+    private $classname;
 
     /**
-     * IMainComponent The parent for this component
+     * @var int
      */
-    protected $parent;
+    private $line;
 
-    public function setType(string $type)
+    /**
+     * @return string
+     */
+    public function getClass() : string
     {
-        $this->type = $type;
+        return $this->class;
     }
 
-    public function setText(string $text)
+    /**
+     * @return string
+     */
+    public function getClassname() : string
     {
-        $this->text = $text;
+        return $this->classname;
     }
 
-    public function setParent(IMainComponent $component)
+    /**
+     * @return int
+     */
+    public function getLine() : int
     {
-        $this->parent = $component;
+        return $this->line;
     }
 
-    public function getType() : string
+    /**
+     * @param string $class
+     */
+    public function setClass(string $class)
     {
-        return $this->type;
+        $this->class = $class;
     }
 
-    public function getText() : string
+    /**
+     * @param string $classname
+     */
+    public function setClassname(string $classname)
     {
-        return $this->text;
+        $this->classname = $classname;
     }
 
-    public function getParent() : IMainComponent
+    /**
+     * @param int $line
+     */
+    public function setLine(int $line)
     {
-        return $this->parent;
+        $this->line = $line;
     }
 }

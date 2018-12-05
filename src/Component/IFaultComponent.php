@@ -17,10 +17,19 @@
  *
  * @copyright
  */
+namespace RazeSoldier\JUnitLogParser\Component;
 
-namespace RazeSoldier\JUnitLogParser;
-
-class TestFailure extends AbstractFaultComponent implements ITestFailure
+interface IFaultComponent extends IComponent
 {
+    public function setType(string $type);
 
+    public function setText(string $text);
+
+    public function setParent(IMainComponent $component);
+
+    public function getType() : string;
+
+    public function getText() : string;
+
+    public function getParent() : IMainComponent;
 }

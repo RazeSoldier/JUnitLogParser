@@ -18,9 +18,23 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\Component;
 
-interface IComponent
+interface ITestSuite extends IMainComponent
 {
+    public function setTestsCount(int $count);
 
+    public function setErrorsCount(int $count);
+
+    public function setFailuresCount(int $count);
+
+    public function setSkippedCount(int $count);
+
+    public function getTestsCount() : int;
+
+    public function getErrorsCount() : int;
+
+    public function getFailuresCount() : int;
+
+    public function getSkippedCount() : int;
 }

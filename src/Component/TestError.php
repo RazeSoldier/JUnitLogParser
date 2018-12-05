@@ -17,16 +17,9 @@
  *
  * @copyright
  */
+namespace RazeSoldier\JUnitLogParser\Component;
 
-namespace RazeSoldier\JUnitLogParser;
-
-use DiDom\Element;
-
-class TestErrorBuilder extends AbstractFaultComponentBuilder
+class TestError extends AbstractFaultComponent implements ITestError
 {
-    public function __construct(Element $element)
-    {
-        parent::__construct($element);
-        $this->product = new TestError();
-    }
+
 }

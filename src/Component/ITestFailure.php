@@ -18,25 +18,9 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\Component;
 
-use DiDom\Element;
-
-class ComponentBuilderFactory
+interface ITestFailure extends IFaultComponent
 {
-    public static function make(Element $element) : IBuilder
-    {
-        switch ($element->tag) {
-            case 'testsuite':
-                return new TestSuiteBuilder($element);
-            case 'testcase':
-                return new TestCaseBuilder($element);
-            case 'failure':
-                return new TestFailureBuilder($element);
-            case 'error':
-                return new TestErrorBuilder($element);
-            default:
-                throw new \LogicException("Failed to parse '{$element->tag}'");
-        }
-    }
+
 }

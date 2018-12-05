@@ -18,19 +18,41 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\ComponentBuilder;
 
-interface ITestCase extends IMainComponent
+use DiDom\Element;
+
+abstract class AbstractFaultComponentBuilder implements IBuilder
 {
-    public function getClass() : string;
+    /**
+     * @var Element
+     */
+    protected $element;
 
-    public function getClassname() : string;
+    /**
+     * @var IFaultComponent
+     */
+    protected $product;
 
-    public function getLine() : int;
+    public function __construct(Element $element)
+    {
+        $this->element = $element;
+    }
 
-    public function setClass(string $class);
+    public function build()
+    {
+        $this->buildType();
+        $this->buildText();
+        return $this->product;
+    }
 
-    public function setClassname(string $classname);
+    protected function buildType()
+    {
+        $this->product->setType($this->element->type);
+    }
 
-    public function setLine(int $line);
+    protected function buildText()
+    {
+        $this->product->setText($this->element->text());
+    }
 }

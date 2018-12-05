@@ -18,41 +18,42 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\Component;
 
-use DiDom\Element;
-
-abstract class AbstractFaultComponentBuilder implements IBuilder
+interface IMainComponent extends IComponent
 {
     /**
-     * @var Element
+     * @var IComponent|null Get the parent under the current component
      */
-    protected $element;
+    public function getParent();
+
+    public function addChildren(IComponent $component);
 
     /**
-     * @var IFaultComponent
+     * @return bool
      */
-    protected $product;
+    public function hasChildren() : bool;
 
-    public function __construct(Element $element)
-    {
-        $this->element = $element;
-    }
+    /**
+     * @return IComponent[]
+     */
+    public function getChildren() : array;
 
-    public function build()
-    {
-        $this->buildType();
-        $this->buildText();
-        return $this->product;
-    }
+    public function setName(string $name);
 
-    protected function buildType()
-    {
-        $this->product->setType($this->element->type);
-    }
+    public function setAssertionsCount(int $count);
 
-    protected function buildText()
-    {
-        $this->product->setText($this->element->text());
-    }
+    public function setTime(float $time);
+
+    public function setParent(IMainComponent $component);
+
+    public function setFile($file);
+
+    public function getName() : string;
+
+    public function getAssertionsCount() : int;
+
+    public function getTime() : float;
+
+    public function getFile();
 }
