@@ -30,7 +30,7 @@ abstract class AbstractMainComponentBuilder implements IBuilder
     protected $element;
 
     /**
-     * @var RazeSoldier\JUnitLogParser\Component\IMainComponent
+     * @var \RazeSoldier\JUnitLogParser\Component\IMainComponent
      */
     protected $product;
 

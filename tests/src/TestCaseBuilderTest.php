@@ -42,7 +42,7 @@ class TestCaseBuilderTest extends TestCase
     }
 
     /**
-     * @covers \RazeSoldier\JUnitLogParser\TestCaseBuilder
+     * @covers \RazeSoldier\JUnitLogParser\ComponentBuilder\TestCaseBuilder
      */
     public function testBuild()
     {

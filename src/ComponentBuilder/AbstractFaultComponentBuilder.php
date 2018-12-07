@@ -30,7 +30,7 @@ abstract class AbstractFaultComponentBuilder implements IBuilder
     protected $element;
 
     /**
-     * @var IFaultComponent
+     * @var \RazeSoldier\JUnitLogParser\Component\IFaultComponent
      */
     protected $product;
 

@@ -17,6 +17,7 @@
  *
  * @copyright
  */
+
 namespace RazeSoldier\JUnitLogParser\Component;
 
 interface IFaultComponent extends IComponent
