@@ -29,15 +29,15 @@
             <xs:attribute name="errors" type="xs:integer" use="required"/>
             <xs:attribute name="failures" type="xs:integer" use="required"/>
             <xs:attribute name="skipped" type="xs:integer" use="required"/>
-            <xs:attribute name="file" type="xs:string" use="optional"/>
+            <xs:attribute name="file" type="xs:string"/>
         </xs:complexType>
     </xs:element>
 
     <xs:element name="testcase">
         <xs:complexType mixed="true">
             <xs:sequence minOccurs="0">
-                <xs:element name="skipped" type="xs:string" minOccurs="0" maxOccurs="1"/>
-                <xs:element ref="warning" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="skipped" type="xs:string" minOccurs="0"/>
+                <xs:element ref="warning" minOccurs="0"/>
                 <xs:element ref="failure" minOccurs="0"/>
                 <xs:element ref="error" minOccurs="0"/>
                 <xs:element name="system-err" type="xs:string" minOccurs="0"/>
