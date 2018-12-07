@@ -120,6 +120,8 @@ class ParserTest extends TestCase
 
     public function testLoadBigLog()
     {
-        Parser::loadFile(self::ASSETS[4]);
+        $parser = Parser::loadFile(self::ASSETS[4]);
+        $info = $parser->getTestSuiteInfo('ActorMigrationTest::testInsertRoundTrip');
+        $this->assertSame(144, $info['assertions']);
     }
 }

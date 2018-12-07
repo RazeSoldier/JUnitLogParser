@@ -51,9 +51,9 @@ interface IMainComponent extends IComponent
 
     public function getName() : string;
 
-    public function getAssertionsCount();
+    public function getAssertionsCount() : ?int;
 
-    public function getTime();
+    public function getTime() : ?float;
 
     public function getFile();
 }

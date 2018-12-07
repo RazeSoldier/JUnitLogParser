@@ -26,7 +26,7 @@ interface ITestCase extends IMainComponent
 
     public function getClassname();
 
-    public function getLine();
+    public function getLine() : ?int;
 
     public function setClass($class);
 

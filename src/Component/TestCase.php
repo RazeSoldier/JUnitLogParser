@@ -56,7 +56,7 @@ class TestCase extends AbstractMainComponent implements ITestCase
     /**
      * @return int|null
      */
-    public function getLine()
+    public function getLine() : ?int
     {
         return $this->line;
     }
