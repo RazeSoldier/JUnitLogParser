@@ -23,24 +23,24 @@ namespace RazeSoldier\JUnitLogParser\Component;
 class TestCase extends AbstractMainComponent implements ITestCase
 {
     /**
-     * @var string
+     * @var string|null
      */
     private $class;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $classname;
 
     /**
-     * @var int
+     * @var int|null
      */
     private $line;
 
     /**
      * @return string
      */
-    public function getClass() : string
+    public function getClass()
     {
         return $this->class;
     }
@@ -48,39 +48,39 @@ class TestCase extends AbstractMainComponent implements ITestCase
     /**
      * @return string
      */
-    public function getClassname() : string
+    public function getClassname()
     {
         return $this->classname;
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getLine() : int
+    public function getLine() : ?int
     {
         return $this->line;
     }
 
     /**
-     * @param string $class
+     * @param string|null $class
      */
-    public function setClass(string $class)
+    public function setClass($class)
     {
         $this->class = $class;
     }
 
     /**
-     * @param string $classname
+     * @param string|null $classname
      */
-    public function setClassname(string $classname)
+    public function setClassname($classname)
     {
         $this->classname = $classname;
     }
 
     /**
-     * @param int $line
+     * @param int|null $line
      */
-    public function setLine(int $line)
+    public function setLine($line)
     {
         $this->line = $line;
     }

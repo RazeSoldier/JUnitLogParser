@@ -58,6 +58,9 @@ class FaultSearcher
                 ];
                 continue;
             }
+            if (!$child instanceof IMainComponent) {
+                continue;
+            }
             $result = (new self($child))->search();
             if ($result !== false) {
                 $faults = array_merge($faults, $result);

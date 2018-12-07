@@ -35,6 +35,14 @@ class ComponentBuilderFactory
                 return new TestFailureBuilder($element);
             case 'error':
                 return new TestErrorBuilder($element);
+            case 'skipped':
+                return new TestSkippedBuilder;
+            case 'warning':
+                return new TestWarningBuilder($element);
+            case 'system-err':
+                return new TestSystemErrorBuilder;
+            case 'system-out':
+                return new TestSystemOutBuilder;
             default:
                 throw new \LogicException("Failed to parse '{$element->tag}'");
         }

@@ -41,6 +41,10 @@ class Parser implements IParser
      */
     private $result = [];
 
+    /**
+     * @param string $str The string to be parsed
+     * @throws \DOMException
+     */
     public function __construct(string $str)
     {
         $doc = new Document();
@@ -58,8 +62,9 @@ class Parser implements IParser
     }
 
     /**
-     * @param string $path
+     * @param string $path The file path to be loaded
      * @return Parser
+     * @throws \DOMException
      */
     public static function loadFile(string $path) : IParser
     {
@@ -70,6 +75,11 @@ class Parser implements IParser
         return new self(file_get_contents($path));
     }
 
+    /**
+     * @param string $xml The XML string to be loaded
+     * @return IParser
+     * @throws \DOMException
+     */
     public static function load(string $xml) : IParser
     {
         return new self($xml);

@@ -30,6 +30,7 @@ class ParserTest extends TestCase
         1 => ASSETS_DIR . '/1.xml',
         2 => ASSETS_DIR . '/2.xml',
         3 => ASSETS_DIR . '/3.xml',
+        4 => ASSETS_DIR . '/4.xml',
     ];
 
     /**
@@ -115,5 +116,12 @@ class ParserTest extends TestCase
     public function testCheckValid()
     {
         AtEase::quietCall([Parser::class, 'loadFile'], self::ASSETS[3]);
+    }
+
+    public function testLoadBigLog()
+    {
+        $parser = Parser::loadFile(self::ASSETS[4]);
+        $info = $parser->getTestSuiteInfo('ActorMigrationTest::testInsertRoundTrip');
+        $this->assertSame(144, $info['assertions']);
     }
 }
