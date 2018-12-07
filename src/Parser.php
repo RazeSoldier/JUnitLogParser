@@ -22,6 +22,10 @@ namespace RazeSoldier\JUnitLogParser;
 
 use DiDom\Document;
 use RazeSoldier\JUnitLogParser\ComponentBuilder\ComponentBuilderFactory;
+use RazeSoldier\JUnitLogParser\Component\{
+    ITestCase,
+    ITestSuite
+};
 
 class Parser implements IParser
 {
@@ -33,7 +37,7 @@ class Parser implements IParser
     private $doc;
 
     /**
-     * @var ITestSuite[]
+     * @var Component\ITestSuite[]
      */
     private $result = [];
 

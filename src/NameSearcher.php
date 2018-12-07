@@ -57,7 +57,7 @@ class NameSearcher
     }
 
     /**
-     * @return IComponent|false
+     * @return \RazeSoldier\JUnitLogParser\Component\IComponent|false
      */
     public function search()
     {
