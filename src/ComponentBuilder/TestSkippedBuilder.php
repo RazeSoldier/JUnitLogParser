@@ -20,12 +20,16 @@
 
 namespace RazeSoldier\JUnitLogParser\ComponentBuilder;
 
-use DiDom\Element;
 use RazeSoldier\JUnitLogParser\Component\TestSkipped;
 
 class TestSkippedBuilder implements IBuilder
 {
-    public function __construct(Element $element)
+    /**
+     * @var TestSkipped
+     */
+    private $product;
+
+    public function __construct()
     {
         $this->product = new TestSkipped();
     }
