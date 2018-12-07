@@ -5,7 +5,7 @@
   "license": "GPL-2.0-or-later",
   "require": {
     "imangazaliev/didom": "^1.1.3",
-    "php": ">7.0.0"
+    "php": ">7.1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^6",
