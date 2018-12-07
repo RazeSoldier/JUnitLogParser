@@ -22,15 +22,15 @@ namespace RazeSoldier\JUnitLogParser\Component;
 
 interface ITestCase extends IMainComponent
 {
-    public function getClass() : string;
+    public function getClass();
 
-    public function getClassname() : string;
+    public function getClassname();
 
-    public function getLine() : int;
+    public function getLine();
 
-    public function setClass(string $class);
+    public function setClass($class);
 
-    public function setClassname(string $classname);
+    public function setClassname($classname);
 
-    public function setLine(int $line);
+    public function setLine($line);
 }

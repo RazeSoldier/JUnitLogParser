@@ -35,15 +35,21 @@
 
     <xs:element name="testcase">
         <xs:complexType mixed="true">
-            <xs:choice minOccurs="0">
-                <xs:element ref="failure"/>
-                <xs:element ref="error"/>
-            </xs:choice>
-            <xs:attributeGroup ref="Main"/>
-            <xs:attribute name="class" type="xs:string" use="required"/>
-            <xs:attribute name="classname" type="xs:string" use="required"/>
-            <xs:attribute name="file" type="xs:string" use="required"/>
-            <xs:attribute name="line" type="xs:integer" use="required"/>
+            <xs:sequence minOccurs="0">
+                <xs:element name="skipped" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="warning" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="failure" minOccurs="0"/>
+                <xs:element ref="error" minOccurs="0"/>
+                <xs:element name="system-err" type="xs:string" minOccurs="0"/>
+                <xs:element name="system-out" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string"/>
+            <xs:attribute name="time" type="xs:decimal"/>
+            <xs:attribute name="assertions" type="xs:integer"/>
+            <xs:attribute name="class" type="xs:string"/>
+            <xs:attribute name="classname" type="xs:string"/>
+            <xs:attribute name="file" type="xs:string"/>
+            <xs:attribute name="line" type="xs:integer"/>
         </xs:complexType>
     </xs:element>
 
@@ -54,6 +60,12 @@
     </xs:element>
 
     <xs:element name="error">
+        <xs:complexType mixed="true">
+            <xs:attribute name="type" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="warning">
         <xs:complexType mixed="true">
             <xs:attribute name="type" type="xs:string" use="required"/>
         </xs:complexType>

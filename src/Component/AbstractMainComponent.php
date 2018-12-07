@@ -57,12 +57,12 @@ abstract class AbstractMainComponent implements IMainComponent
         return $this->name;
     }
 
-    public function getAssertionsCount() : int
+    public function getAssertionsCount()
     {
         return $this->assertionsCount;
     }
 
-    public function getTime() : float
+    public function getTime()
     {
         return $this->time;
     }
@@ -89,12 +89,12 @@ abstract class AbstractMainComponent implements IMainComponent
         $this->name = $name;
     }
 
-    public function setAssertionsCount(int $count)
+    public function setAssertionsCount($count)
     {
         $this->assertionsCount = $count;
     }
 
-    public function setTime(float $time)
+    public function setTime($time)
     {
         $this->time = $time;
     }
