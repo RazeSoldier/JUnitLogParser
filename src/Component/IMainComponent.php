@@ -41,13 +41,13 @@ interface IMainComponent extends IComponent
 
     public function setName(string $name);
 
-    public function setAssertionsCount($count);
+    public function setAssertionsCount(?int $count);
 
-    public function setTime($time);
+    public function setTime(?float $time);
 
     public function setParent(IMainComponent $component);
 
-    public function setFile($file);
+    public function setFile(?string $file);
 
     public function getName() : string;
 
@@ -55,5 +55,5 @@ interface IMainComponent extends IComponent
 
     public function getTime() : ?float;
 
-    public function getFile();
+    public function getFile() : ?string;
 }

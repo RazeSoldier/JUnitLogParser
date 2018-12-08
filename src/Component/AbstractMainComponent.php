@@ -70,7 +70,7 @@ abstract class AbstractMainComponent implements IMainComponent
     /**
      * @return string|null
      */
-    public function getFile()
+    public function getFile() : ?string
     {
         return $this->file;
     }
@@ -89,12 +89,12 @@ abstract class AbstractMainComponent implements IMainComponent
         $this->name = $name;
     }
 
-    public function setAssertionsCount($count)
+    public function setAssertionsCount(?int $count)
     {
         $this->assertionsCount = $count;
     }
 
-    public function setTime($time)
+    public function setTime(?float $time)
     {
         $this->time = $time;
     }
@@ -104,7 +104,7 @@ abstract class AbstractMainComponent implements IMainComponent
         $this->parent = $component;
     }
 
-    public function setFile($file)
+    public function setFile(?string $file)
     {
         $this->file = $file;
     }
