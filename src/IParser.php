@@ -20,6 +20,8 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
+use RazeSoldier\JUnitLogParser\Component\ITestSuite;
+
 interface IParser
 {
     /**
@@ -60,6 +62,13 @@ interface IParser
      *  - failures
      */
     public function getTestSuiteInfo(string $testSuiteName) : array;
+
+    /**
+     * Find a test suite from the parser result
+     * @param string $name
+     * @return ITestSuite
+     */
+    public function findTestSuite(string $name) : ITestSuite;
 
     /**
      * Get the test result from given log

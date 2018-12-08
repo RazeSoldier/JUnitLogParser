@@ -107,18 +107,7 @@ class Parser implements IParser
      */
     public function getTestSuiteInfo(string $testSuiteName) : array
     {
-        foreach ($this->result as $item) {
-            $result = (new NameSearcher($item, $testSuiteName, function ($result) {
-                return $result instanceof ITestCase ? false : true;
-            }))->search();
-            if ($result !== false) {
-                break;
-            }
-        }
-        /** @var ITestSuite|false $result */
-        if ($result === false) {
-            throw new \RuntimeException("'$testSuiteName' test suite does not exist");
-        }
+        $result = $this->findTestSuite($testSuiteName);
         return [
             'name' => $result->getName(),
             'file' => $result->getFile(),
@@ -129,6 +118,23 @@ class Parser implements IParser
             'errors' => $result->getErrorsCount(),
             'failures' => $result->getFailuresCount(),
         ];
+    }
+
+    public function findTestSuite(string $name) : ITestSuite
+    {
+        foreach ($this->result as $item) {
+            $result = (new NameSearcher($item, $name, function ($result) {
+                return $result instanceof ITestCase ? false : true;
+            }))->search();
+            if ($result !== false) {
+                break;
+            }
+        }
+        /** @var ITestSuite|false $result */
+        if ($result === false) {
+            throw new \RuntimeException("'$name' test suite does not exist");
+        }
+        return $result;
     }
 
     public function getTestResult() : TestResult

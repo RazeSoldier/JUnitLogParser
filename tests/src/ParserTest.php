@@ -59,6 +59,9 @@ class ParserTest extends TestCase
         $this->assertInstanceOf(Parser::class, Parser::load(file_get_contents(self::ASSETS[1])));
     }
 
+    /**
+     * @covers \RazeSoldier\JUnitLogParser\Parser::getTestSuiteInfo()
+     */
     public function testGetTestSuiteInfo()
     {
         $parser = Parser::loadFile(self::ASSETS[1]);
@@ -74,6 +77,23 @@ class ParserTest extends TestCase
             'failures' => 0,
         ];
         $this->assertSame($expected, $result);
+    }
+
+    public function testFindTestSuite()
+    {
+        $parser = Parser::loadFile(self::ASSETS[4]);
+        $result = $parser->findTestSuite('FileBackendTest::testIsStoragePath');
+        $this->assertSame(0.012495, $result->getTime());
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     * @expectedExceptionMessage 'This is test' test suite does not exist
+     */
+    public function testFindTestSuiteException()
+    {
+        $parser = Parser::loadFile(self::ASSETS[1]);
+        $parser->findTestSuite('This is test');
     }
 
     public function testGetTestResult()

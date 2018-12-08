@@ -21,6 +21,7 @@
 namespace RazeSoldier\JUnitLogParser;
 
 use RazeSoldier\JUnitLogParser\Component\IMainComponent;
+use RazeSoldier\JUnitLogParser\Component\ITestSuite;
 
 /**
  * Used to search a collection via name
@@ -68,6 +69,9 @@ class NameSearcher
             return false;
         }
         foreach ($this->component->getChildren() as $child) {
+            if (!$child instanceof ITestSuite) {
+                continue;
+            }
             if ($child->getName() === $this->needle) {
                 if (!$this->hook($child)) {
                     continue;
