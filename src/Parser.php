@@ -26,6 +26,10 @@ use RazeSoldier\JUnitLogParser\Component\{
     ITestCase,
     ITestSuite
 };
+use RazeSoldier\JUnitLogParser\Searcher\{
+    FaultSearcher,
+    MainComponentSearcher,
+};
 
 class Parser implements IParser
 {

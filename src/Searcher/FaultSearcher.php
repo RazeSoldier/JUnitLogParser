@@ -18,7 +18,7 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\Searcher;
 
 use RazeSoldier\JUnitLogParser\Component\{
     IMainComponent,
@@ -29,7 +29,7 @@ use RazeSoldier\JUnitLogParser\Component\{
  * Used to find faults in a main component
  * @package RazeSoldier\JUnitLogParser
  */
-class FaultSearcher
+class FaultSearcher implements ISearcher
 {
     /**
      * @var IMainComponent

@@ -18,7 +18,7 @@
  * @copyright
  */
 
-namespace RazeSoldier\JUnitLogParser;
+namespace RazeSoldier\JUnitLogParser\Searcher;
 
 use RazeSoldier\JUnitLogParser\Component\{
     IMainComponent,
@@ -29,7 +29,7 @@ use RazeSoldier\JUnitLogParser\Component\{
  * Used to search a collection via name to find a main component
  * @package RazeSoldier\JUnitLogParser
  */
-class MainComponentSearcher
+class MainComponentSearcher implements ISearcher
 {
     /**
      * @var IMainComponent
@@ -60,7 +60,7 @@ class MainComponentSearcher
     }
 
     /**
-     * @return Component\IMainComponent|false
+     * @return \RazeSoldier\JUnitLogParser\Component\IMainComponent|false
      */
     public function search()
     {

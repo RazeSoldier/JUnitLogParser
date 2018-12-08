@@ -22,7 +22,7 @@ namespace RazeSoldier\JUnitLogParser\Test;
 
 use RazeSoldier\JUnitLogParser\{
     Parser,
-    MainComponentSearcher
+    Searcher\MainComponentSearcher,
 };
 use RazeSoldier\JUnitLogParser\Component\{
     IMainComponent,
