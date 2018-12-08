@@ -22,22 +22,22 @@ namespace RazeSoldier\JUnitLogParser\Test;
 
 use RazeSoldier\JUnitLogParser\{
     Parser,
-    NameSearcher
+    MainComponentSearcher
 };
 use RazeSoldier\JUnitLogParser\Component\{
-    IComponent,
+    IMainComponent,
     ITestCase,
-    ITestSuite
+    ITestSuite,
 };
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \RazeSoldier\JUnitLogParser\NameSearcher
+ * @covers \RazeSoldier\JUnitLogParser\MainComponentSearcher
  */
 class NameSearcherTest extends TestCase
 {
     /**
-     * @var IComponent
+     * @var IMainComponent
      */
     private $set;
 
@@ -49,13 +49,13 @@ class NameSearcherTest extends TestCase
 
     public function testSearch()
     {
-        $searcher = new NameSearcher($this->set, 'CommandFactoryTest');
+        $searcher = new MainComponentSearcher($this->set, 'CommandFactoryTest');
         $result = $searcher->search();
         $this->assertInstanceOf(ITestSuite::class, $result);
         $this->assertSame('/srv/devmw/w/tests/phpunit/includes/shell/CommandFactoryTest.php', $result->getFile());
         $this->assertSame(0.057585, $result->getTime());
 
-        $searcher = new NameSearcher($this->set, 'testInput');
+        $searcher = new MainComponentSearcher($this->set, 'testInput');
         $result = $searcher->search();
         $this->assertInstanceOf(ITestCase::class, $result);
         $this->assertSame('/srv/devmw/w/tests/phpunit/includes/shell/CommandTest.php', $result->getFile());
@@ -64,7 +64,7 @@ class NameSearcherTest extends TestCase
 
     public function testSearchWithHook()
     {
-        $searcher = new NameSearcher($this->set, 'testInput', function ($result) {
+        $searcher = new MainComponentSearcher($this->set, 'testInput', function ($result) {
             return $result instanceof ITestCase ? false : true;
         });
         $result = $searcher->search();

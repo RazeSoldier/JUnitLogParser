@@ -123,7 +123,7 @@ class Parser implements IParser
     public function findTestSuite(string $name) : ITestSuite
     {
         foreach ($this->result as $item) {
-            $result = (new NameSearcher($item, $name, function ($result) {
+            $result = (new MainComponentSearcher($item, $name, function ($result) {
                 return $result instanceof ITestCase ? false : true;
             }))->search();
             if ($result !== false) {

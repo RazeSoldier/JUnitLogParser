@@ -20,14 +20,16 @@
 
 namespace RazeSoldier\JUnitLogParser;
 
-use RazeSoldier\JUnitLogParser\Component\IMainComponent;
-use RazeSoldier\JUnitLogParser\Component\ITestSuite;
+use RazeSoldier\JUnitLogParser\Component\{
+    IMainComponent,
+    ITestSuite,
+};
 
 /**
- * Used to search a collection via name
+ * Used to search a collection via name to find a main component
  * @package RazeSoldier\JUnitLogParser
  */
-class NameSearcher
+class MainComponentSearcher
 {
     /**
      * @var IMainComponent
@@ -58,7 +60,7 @@ class NameSearcher
     }
 
     /**
-     * @return \RazeSoldier\JUnitLogParser\Component\IComponent|false
+     * @return Component\IMainComponent|false
      */
     public function search()
     {
@@ -80,7 +82,13 @@ class NameSearcher
             }
             if ($child->hasChildren()) {
                 foreach ($child->getChildren() as $childChild) {
+                    if (!$childChild instanceof IMainComponent) {
+                        continue;
+                    }
                     $result = (new self($childChild, $this->needle, $this->hook))->search();
+                    if (!$result instanceof IMainComponent) {
+                        continue;
+                    }
                     if ($result !== false) {
                         if (!$this->hook($result)) {
                             continue;
