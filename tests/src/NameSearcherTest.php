@@ -22,12 +22,12 @@ namespace RazeSoldier\JUnitLogParser\Test;
 
 use RazeSoldier\JUnitLogParser\{
     Parser,
-    Searcher\MainComponentSearcher,
+    Searcher\MainComponentSearcher
 };
 use RazeSoldier\JUnitLogParser\Component\{
     IMainComponent,
     ITestCase,
-    ITestSuite,
+    ITestSuite
 };
 use PHPUnit\Framework\TestCase;
 

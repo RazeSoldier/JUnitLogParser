@@ -28,7 +28,7 @@ use RazeSoldier\JUnitLogParser\Component\{
 };
 use RazeSoldier\JUnitLogParser\Searcher\{
     FaultSearcher,
-    MainComponentSearcher,
+    MainComponentSearcher
 };
 
 class Parser implements IParser
