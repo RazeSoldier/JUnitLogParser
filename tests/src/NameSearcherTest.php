@@ -32,7 +32,7 @@ use RazeSoldier\JUnitLogParser\Component\{
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \RazeSoldier\JUnitLogParser\MainComponentSearcher
+ * @covers \RazeSoldier\JUnitLogParser\Searcher\MainComponentSearcher
  */
 class NameSearcherTest extends TestCase
 {
