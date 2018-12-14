@@ -89,12 +89,10 @@ class MainComponentSearcher implements ISearcher
                     if (!$result instanceof IMainComponent) {
                         continue;
                     }
-                    if ($result !== false) {
-                        if (!$this->hook($result)) {
-                            continue;
-                        }
-                        return $result;
+                    if (!$this->hook($result)) {
+                        continue;
                     }
+                    return $result;
                 }
             }
         }
