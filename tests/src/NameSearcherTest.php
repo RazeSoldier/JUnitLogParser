@@ -44,7 +44,7 @@ class NameSearcherTest extends TestCase
     public function setUp()
     {
         $parser = Parser::loadFile(ASSETS_DIR . '/1.xml');
-        $this->set = $parser->getResult()[0];
+        $this->set = $parser->getRawResult()[0];
     }
 
     public function testSearch()

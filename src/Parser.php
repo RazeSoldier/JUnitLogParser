@@ -94,7 +94,7 @@ class Parser implements IParser
         return new self($xml);
     }
 
-    public function getResult() : array
+    public function getRawResult() : array
     {
         return $this->result;
     }

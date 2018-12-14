@@ -45,9 +45,9 @@ interface IParser
     public static function load(string $xml) : IParser;
 
     /**
-     * @return array Returns parse result
+     * @return array Returns parse result, without any handle
      */
-    public function getResult() : array;
+    public function getRawResult() : array;
 
     /**
      * @param string $testSuiteName
