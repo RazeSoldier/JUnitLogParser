@@ -96,4 +96,15 @@ class TestResult
     {
         return $this->faults;
     }
+
+    /**
+     * @return bool Returns TRUE on test passed, otherwise return FALSE
+     */
+    public function isPass() : bool
+    {
+        if ($this->failures === 0 && $this->errors === 0) {
+            return true;
+        }
+        return false;
+    }
 }

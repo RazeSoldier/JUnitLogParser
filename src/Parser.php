@@ -46,6 +46,11 @@ class Parser implements IParser
     private $result = [];
 
     /**
+     * @var array Used to store share data
+     */
+    private $cache = [];
+
+    /**
      * @param string $str The string to be parsed
      * @throws \DOMException
      */
@@ -68,7 +73,7 @@ class Parser implements IParser
     /**
      * @param string $path The file path to be loaded
      * @return Parser
-     * @throws \DOMException
+     * @throws \DOMException, \RuntimeException
      */
     public static function loadFile(string $path) : IParser
     {
@@ -143,6 +148,9 @@ class Parser implements IParser
 
     public function getTestResult() : TestResult
     {
+        if (isset($this->cache['test_result'])) {
+            return $this->cache['test_result'];
+        }
         $tests = 0;
         $time = 0;
         $skipped = 0;
@@ -163,6 +171,12 @@ class Parser implements IParser
             }
         }
         $result = new TestResult(compact('tests', 'assertions', 'skipped', 'errors', 'failures', 'time', 'faults'));
+        $this->cache['test_result'] = $result;
         return $result;
+    }
+
+    public function isPass(): bool
+    {
+        return $this->getTestResult()->isPass();
     }
 }
