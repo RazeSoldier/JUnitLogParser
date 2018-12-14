@@ -144,4 +144,13 @@ class ParserTest extends TestCase
         $info = $parser->getTestSuiteInfo('ActorMigrationTest::testInsertRoundTrip');
         $this->assertSame(144, $info['assertions']);
     }
+
+    /**
+     * @covers \RazeSoldier\JUnitLogParser\Parser::isPass()
+     */
+    public function testIsPass()
+    {
+        $this->assertSame(true, (Parser::loadFile(self::ASSETS[1]))->isPass());
+        $this->assertSame(false, (Parser::loadFile(self::ASSETS[2]))->isPass());
+    }
 }

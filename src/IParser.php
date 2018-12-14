@@ -75,4 +75,10 @@ interface IParser
      * @return TestResult
      */
     public function getTestResult() : TestResult;
+
+    /**
+     * Check if the test passed
+     * @return bool Returns TRUE on passed, otherwise return FALSE
+     */
+    public function isPass() : bool;
 }
