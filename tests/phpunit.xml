@@ -9,6 +9,7 @@
         <testsuite name="Builder">
             <file>src/TestCaseBuilderTest.php</file>
             <file>src/TestSuiteBuilderTest.php</file>
+            <file>src/ComponentBuilderFactoryTest.php</file>
         </testsuite>
         <testsuite name="Searcher">
             <file>src/NameSearcherTest.php</file>
