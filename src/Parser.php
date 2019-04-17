@@ -52,13 +52,15 @@ class Parser implements IParser
 
     /**
      * @param string $str The string to be parsed
+     * @param bool $graceful throws an exception if schema is not valid when false
+     *
      * @throws \DOMException
      */
-    public function __construct(string $str)
+    public function __construct(string $str, bool $graceful = false)
     {
         $doc = new Document();
         $doc->loadXML($str);
-        if (!$this->checkValid($doc->getDocument())) {
+        if (!$this->checkValid($doc->getDocument()) && !$graceful) {
             throw new \DOMException('Cannot parse non-JUnit log format XML');
         }
         $this->doc = $doc;

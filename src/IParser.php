@@ -27,8 +27,9 @@ interface IParser
     /**
      * IParser constructor.
      * @param string $str Text that JUnit log format
+     * @param bool $graceful throws an exception if schema is not valid when false
      */
-    public function __construct(string $str);
+    public function __construct(string $str, bool $graceful = false);
 
     /**
      * Initialize the parser from an xml file
