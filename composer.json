@@ -1,5 +1,5 @@
 {
-  "name": "razesoldier/junit-log-parser",
+  "name": "guillaumedelre/junit-log-parser",
   "description": "JUnit log parser",
   "keywords": ["JUnit", "Log Parser"],
   "license": "GPL-2.0-or-later",
