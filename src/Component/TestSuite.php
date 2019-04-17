@@ -33,12 +33,12 @@ class TestSuite extends AbstractMainComponent implements ITestSuite
     private $errorsCount;
 
     /**
-     * @var int The count of failure tests for this suite
+     * @var int|null The count of failure tests for this suite
      */
     private $failuresCount;
 
     /**
-     * @var int The count of skipped tests for this suite
+     * @var int|null The count of skipped tests for this suite
      */
     private $skippedCount;
 
@@ -58,22 +58,22 @@ class TestSuite extends AbstractMainComponent implements ITestSuite
 
     public function getTestsCount() : int
     {
-        return $this->testsCount;
+        return $this->testsCount ?? 0;
     }
 
     public function getErrorsCount() : int
     {
-        return $this->errorsCount;
+        return $this->errorsCount ?? 0;
     }
 
     public function getFailuresCount() : int
     {
-        return $this->failuresCount;
+        return $this->failuresCount ?? 0;
     }
 
     public function getSkippedCount() : int
     {
-        return $this->skippedCount;
+        return $this->skippedCount ?? 0;
     }
 
     /**
