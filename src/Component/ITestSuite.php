@@ -22,13 +22,13 @@ namespace RazeSoldier\JUnitLogParser\Component;
 
 interface ITestSuite extends IMainComponent
 {
-    public function setTestsCount(int $count);
+    public function setTestsCount(?int $count);
 
-    public function setErrorsCount(int $count);
+    public function setErrorsCount(?int $count);
 
-    public function setFailuresCount(int $count);
+    public function setFailuresCount(?int $count);
 
-    public function setSkippedCount(int $count);
+    public function setSkippedCount(?int $count);
 
     public function getTestsCount() : int;
 

@@ -58,44 +58,44 @@ class TestSuite extends AbstractMainComponent implements ITestSuite
 
     public function getTestsCount() : int
     {
-        return $this->testsCount ?? 0;
+        return $this->testsCount;
     }
 
     public function getErrorsCount() : int
     {
-        return $this->errorsCount ?? 0;
+        return $this->errorsCount;
     }
 
     public function getFailuresCount() : int
     {
-        return $this->failuresCount ?? 0;
+        return $this->failuresCount;
     }
 
     public function getSkippedCount() : int
     {
-        return $this->skippedCount ?? 0;
+        return $this->skippedCount;
     }
 
     /**
      * @param int $testsCount
      */
-    public function setTestsCount(int $testsCount)
+    public function setTestsCount(?int $testsCount)
     {
-        $this->testsCount = $testsCount;
+        $this->testsCount = $testsCount ?? 0;
     }
 
-    public function setErrorsCount(int $count)
+    public function setErrorsCount(?int $count)
     {
-        $this->errorsCount = $count;
+        $this->errorsCount = $count ?? 0;
     }
 
-    public function setFailuresCount(int $count)
+    public function setFailuresCount(?int $count)
     {
-        $this->failuresCount = $count;
+        $this->failuresCount = $count ?? 0;
     }
 
-    public function setSkippedCount(int $count)
+    public function setSkippedCount(?int $count)
     {
-        $this->skippedCount = $count;
+        $this->skippedCount = $count ?? 0;
     }
 }
