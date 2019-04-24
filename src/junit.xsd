@@ -15,7 +15,7 @@
     <xs:attributeGroup name="Main">
         <xs:attribute name="name" type="xs:string" use="required"/>
         <xs:attribute name="time" type="xs:decimal"/>
-        <xs:attribute name="assertions" type="xs:integer" use="required"/>
+        <xs:attribute name="assertions" type="xs:integer"/>
     </xs:attributeGroup>
 
     <xs:element name="testsuite">
